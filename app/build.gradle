@@ -60,7 +60,7 @@ dependencies {
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.5'
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.5'
 
-    // DI
+    // DI - using KOIN
     implementation 'org.koin:koin-android:2.1.5'
     implementation 'org.koin:koin-androidx-viewmodel:2.1.5'
 
