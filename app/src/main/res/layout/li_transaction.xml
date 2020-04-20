@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:focusable="true"
+    android:layout_marginStart="@dimen/standard_padding"
+    android:layout_marginEnd="@dimen/standard_padding"
+    android:padding="@dimen/simi_small_padding"
+    android:orientation="horizontal"
+    android:gravity="center"
+    tools:background="@drawable/rounded_middle_button_white">
+
+    <ImageView
+        android:id="@+id/pic"
+        android:layout_width="@dimen/avatar_image_size"
+        android:layout_height="@dimen/avatar_image_size"
+        android:layout_marginEnd="@dimen/simi_small_padding"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_nala_hand_small"
+        android:tint="@color/nala_grey_800"
+        android:background="@drawable/background_circle"
+        app:backgroundTint="@color/nala_grey_300" />
+
+    <LinearLayout
+        android:id="@+id/details"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginEnd="@dimen/simi_small_padding"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/who"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/nala_grey_800"
+            android:maxLines="2"
+            android:ellipsize="end"
+            tools:text="Mpenzi" />
+
+        <TextView
+            android:id="@+id/type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:textSize="12sp"
+            android:textColor="@color/nala_grey_700"
+            tools:text="Money sent" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/small_padding"
+            android:textColor="@color/nala_grey_600"
+            android:textSize="16sp"
+            tools:text="TSH 1,000,000" />
+
+        <ImageView
+            android:id="@+id/transaction_sim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxWidth="35dp"
+            android:maxHeight="24dp"
+            android:adjustViewBounds="true"
+            tools:srcCompat="@drawable/ic_sim_voda" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/nala_blue</color>
+    <color name="colorPrimaryDark">@color/nala_blue_700</color>
+    <color name="colorAccent">@color/nala_green</color>
+
+    <!-- Colors possibly referenced in app. -->
+    <color name="nala_blue">@color/nala_blue_500</color>
+    <color name="nala_blue_900">#002633</color>
+    <color name="nala_blue_800">#004761</color>
+    <color name="nala_blue_700">#00658A</color>
+    <color name="nala_blue_600">#0083B2</color>
+    <color name="nala_blue_500">#00A2DC</color>
+    <color name="nala_blue_400">#63C2E3</color>
+    <color name="nala_blue_300">#A3DFF5</color>
+    <color name="nala_blue_200">#D4EEF7</color>
+    <color name="nala_blue_100">#F2FAFD</color>
+
+    <color name="nala_grey">@color/nala_grey_500</color>
+    <color name="nala_grey_900">#16191D</color>
+    <color name="nala_grey_800">#2B323B</color>
+    <color name="nala_grey_700">#576475</color>
+    <color name="nala_grey_600">#7B8A9D</color>
+    <color name="nala_grey_500">#A4AFBC</color>
+    <color name="nala_grey_400">#C4CBD4</color>
+    <color name="nala_grey_300">#E2E5E9</color>
+    <color name="nala_grey_200">#F0F2F4</color>
+    <color name="nala_grey_100">#F6F7F8</color>
+
+    <color name="nala_green">@color/nala_green_500</color>
+    <color name="nala_green_900">#184E21</color>
+    <color name="nala_green_800">#21692D</color>
+    <color name="nala_green_700">#288037</color>
+    <color name="nala_green_600">#309741</color>
+    <color name="nala_green_500">#3EA750</color>
+    <color name="nala_green_400">#64CE76</color>
+    <color name="nala_green_300">#9FE1AA</color>
+    <color name="nala_green_200">#CAF2D1</color>
+    <color name="nala_green_100">#F4FBF5</color>
+
+    <!-- Basic Colors -->
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="transparent">#00FFFFFF</color>
+
+    <!-- MNO colors -->
+    <color name="tigopesa">#00367C</color>
+    <color name="vodacom">#FA2A2A</color>
+    <color name="airtel">#ED1C24</color>
+    <color name="halotel">#F6891E</color>
+    <color name="ttcl">#FDCA2F</color>
+    <color name="zantel">#8CB948</color>
+    <color name="mtn">#FFCA08</color>
+    <color name="africell">#A11776</color>
+
+    <!--Bank Colors -->
+    <color name="crdb">#3EA750</color>
+    <color name="nmb">#0C5CA7</color>
+    <color name="nbc">#284793</color>
+    <color name="stanbic">#06379F</color>
+    <color name="exim">#1B3B88</color>
+    <color name="standard_chattered">#3DAA52</color>
+    <color name="centenary">#0069CD</color>
+    <color name="dfcu">#3F7DD8</color>
+    <color name="equity">#D95021</color>
+    <color name="dtb">#E52042</color>
+
+    <!-- Transactions -->
+    <color name="transaction_pending">#F47920</color>
+    <color name="transaction_incoming">@color/nala_green_500</color>
+    <color name="transaction_outgoing">@color/nala_green_500</color>
+
+</resources>

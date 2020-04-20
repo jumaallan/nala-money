@@ -1,0 +1,28 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="massive_padding">64dp</dimen>
+    <dimen name="xlarge_padding">42dp</dimen>
+    <dimen name="large_padding">32dp</dimen>
+    <dimen name="medium_padding">22dp</dimen>
+    <dimen name="standard_padding">16dp</dimen>
+    <dimen name="simi_small_padding">12dp</dimen>
+    <dimen name="small_padding">8dp</dimen>
+    <dimen name="tiny_padding">4dp</dimen>
+
+    <dimen name="avatar_image_size">57dp</dimen>
+
+    <!-- Default screen margins, per the Android Material Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <!-- Buttons -->
+    <dimen name="button_corner">32dp</dimen>
+    <dimen name="button_margin">16dp</dimen>
+
+    <!-- Card View -->
+    <dimen name="card_corner">6dp</dimen>
+    <dimen name="card_elevation_default">2dp</dimen>
+    <dimen name="card_elevation_large">10dp</dimen>
+    <dimen name="card_elevation_remove">0dp</dimen>
+
+</resources>

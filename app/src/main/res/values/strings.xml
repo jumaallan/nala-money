@@ -1,0 +1,27 @@
+<resources>
+
+    <!--
+    #################################################
+    ############# Transaction History ###############
+    #################################################
+    -->
+    <string name="transaction_history_header">Transactions</string>
+
+    <string name="transaction_history_send_money">Send Money</string>
+    <string name="transaction_history_paybill">Pay Bill</string>
+    <string name="transaction_history_buy_bundle">Bundle</string>
+    <string name="transaction_history_withdraw">Cash Out</string>
+    <string name="transaction_history_check_balance">Check Balance</string>
+    <string name="transaction_history_buy_airtime">Airtime</string>
+    <string name="transaction_history_buy_airtime_for_friend">Airtime for Friend</string>
+    <string name="transaction_history_money_received">Money Received</string>
+    <string name="transaction_history_payment">Payment</string>
+
+    <string name="transaction_history_action_show_balance_text">Show</string>
+    <string name="transaction_history_action_hide_balance_text">Hide</string>
+
+    <!-- General Texts -->
+    <string name="txt_amount"><![CDATA[<small>%1$s%2$s </small>%3$s]]></string>
+    <string name="txt_error">Error</string>
+
+</resources>

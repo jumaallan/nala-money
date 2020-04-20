@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE resources [
+    <!ENTITY off "Off">
+    <!ENTITY off_slash "Off / ">
+
+    <!ENTITY voda_customer_care "100">
+    <!ENTITY tigo_customer_care "100">
+    <!ENTITY airtel_customer_care "100">
+
+    <!ENTITY voda_name "Voda">
+    <!ENTITY tigo_name "Tigo">
+    <!ENTITY airtel_name "Airtel">
+    <!ENTITY halo_name "Halotel">
+    <!ENTITY ttcl_name "TTCL">
+    <!ENTITY zantel_name "Zantel">
+    <!ENTITY voda_service "Voda">
+    <!ENTITY tigo_service "Tigo Pesa">
+    <!ENTITY airtel_service "Airtel Money">
+    <!ENTITY halo_service "HaloPesa">
+    <!ENTITY ttcl_service "TTCL PESA">
+    <!ENTITY zantel_service "Ezy Pesa">
+    ]>
+<resources>
+    <string name="app_name" translatable="false">NALA Interview</string>
+
+    <string name="airtel_service" translatable="false">&airtel_service;</string>
+    <string name="tigo_service" translatable="false">&tigo_service;</string>
+    <string name="voda_service" translatable="false">&voda_service;</string>
+    <string name="halo_service" translatable="false">&halo_service;</string>
+    <string name="ttcl_service" translatable="false">&ttcl_service;</string>
+    <string name="zantel_service" translatable="false">&zantel_service;</string>
+
+    <string name="airtel_name" translatable="false">&airtel_name;</string>
+    <string name="tigo_name" translatable="false">&tigo_name;</string>
+    <string name="voda_name" translatable="false">&voda_name;</string>
+    <string name="halo_name" translatable="false">&halo_name;</string>
+    <string name="ttcl_name" translatable="false">&ttcl_name;</string>
+    <string name="zantel_name" translatable="false">&zantel_name;</string>
+
+    <!--
+    #################################################
+    ############## Country Selection ################
+    #################################################
+    -->
+    <string name="country_name_tanzania" translatable="false">Tanzania</string>
+    <string name="country_name_uganda" translatable="false">Uganda</string>
+
+    <string name="currency_ugx" translatable="false">UGX</string>
+    <string name="currency_tzs" translatable="false">Tsh</string>
+
+    <!--
+    #################################################
+    ################### Settings ####################
+    #################################################
+    -->
+    <string name="settings_language_english" translatable="false">English</string>
+    <string name="settings_language_swahili" translatable="false">Swahili</string>
+    <string name="settings_language_luganda" translatable="false">Luganda</string>
+
+</resources>
