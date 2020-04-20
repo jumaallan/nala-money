@@ -1,5 +1,6 @@
 package money.nala.pay.interview.repository
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import money.nala.pay.interview.data.model.Transaction
 import money.nala.pay.interview.data.model.TransactionType
@@ -14,7 +15,7 @@ class TransactionRepository(
         private val settings: Settings
 ) {
 
-    fun getAllTransactions(): MutableLiveData<List<Transaction>> {
+    fun getAllTransactions(): LiveData<List<Transaction>> {
         val transactionsJson = Utils.readFromAssetFile(fileName = TRANSACTIONS_FILE)
         Timber.d("transactionsJson: $transactionsJson")
         val transactions: MutableList<Transaction> = transactionsJson.deserializeJsonToList()

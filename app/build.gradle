@@ -23,6 +23,12 @@ android {
     }
 
     buildTypes {
+        // to add a debug build type and setup stetho for this specific build only :)
+        debug {
+            versionNameSuffix = ' - debug'
+            applicationIdSuffix = '.debug'
+            debuggable true
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'

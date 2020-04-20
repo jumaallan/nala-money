@@ -11,7 +11,7 @@ import org.koin.core.context.startKoin
 import org.koin.core.error.KoinAppAlreadyStartedException
 import timber.log.Timber
 
-class NalaApp : Application() {
+open class NalaApp : Application() {
 
     override fun onCreate() {
         super.onCreate()
