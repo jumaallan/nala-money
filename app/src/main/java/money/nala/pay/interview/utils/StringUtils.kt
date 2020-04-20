@@ -89,7 +89,7 @@ fun String.deserializeJavaMapToMap(): Map<String, String> {
     }
 }
 
-inline fun <reified T, reified K> String.deserializeJsonToMap(): MutableMap<T, K> {
+fun <reified T, reified K> String.deserializeJsonToMap(): MutableMap<T, K> {
     return try {
         Gson().fromJson(this, TypeToken.getParameterized(MutableMap::class.java, T::class.java, K::class.java).type)
     } catch (e: Exception) {
@@ -98,7 +98,7 @@ inline fun <reified T, reified K> String.deserializeJsonToMap(): MutableMap<T, K
     }
 }
 
-inline fun <reified T> String.deserializeJsonToList(): MutableList<T> {
+fun <reified T> String.deserializeJsonToList(): MutableList<T> {
     return try {
         Gson().fromJson(this, TypeToken.getParameterized(MutableList::class.java, T::class.java).type)
     } catch (e: Exception) {

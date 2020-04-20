@@ -9,17 +9,17 @@ import kotlinx.android.synthetic.main.activity_main.*
 import money.nala.pay.interview.R
 import money.nala.pay.interview.ui.adapter.TransactionAdapter
 import money.nala.pay.interview.ui.viewmodels.TransactionViewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var transactionModel: TransactionViewModel
     private lateinit var transactionListAdapter: TransactionAdapter
+
+    private val transactionModel: TransactionViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        transactionModel = ViewModelProvider(this).get(TransactionViewModel::class.java)
 
         initTransactionListView()
 
