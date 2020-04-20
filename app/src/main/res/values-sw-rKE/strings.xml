@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="transaction_history_header">swahili translation</string>
+
+    <string name="transaction_history_send_money">swahili translation</string>
+    <string name="transaction_history_paybill">swahili translation</string>
+    <string name="transaction_history_buy_bundle">swahili translation</string>
+    <string name="transaction_history_withdraw">swahili translation</string>
+    <string name="transaction_history_check_balance">swahili translation</string>
+    <string name="transaction_history_buy_airtime">swahili translation</string>
+    <string name="transaction_history_buy_airtime_for_friend">swahili translation</string>
+    <string name="transaction_history_money_received">swahili translation</string>
+    <string name="transaction_history_payment">swahili translation</string>
+
+    <string name="transaction_history_action_show_balance_text">swahili translation</string>
+    <string name="transaction_history_action_hide_balance_text">swahili translation</string>
+
+    <!-- General Texts -->
+    <string name="txt_error">swahili translation</string>
+</resources>

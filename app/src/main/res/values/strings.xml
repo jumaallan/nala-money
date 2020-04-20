@@ -21,7 +21,7 @@
     <string name="transaction_history_action_hide_balance_text">Hide</string>
 
     <!-- General Texts -->
-    <string name="txt_amount"><![CDATA[<small>%1$s%2$s </small>%3$s]]></string>
+    <string name="txt_amount" translatable="false"><![CDATA[<small>%1$s%2$s </small>%3$s]]></string>
     <string name="txt_error">Error</string>
 
 </resources>
