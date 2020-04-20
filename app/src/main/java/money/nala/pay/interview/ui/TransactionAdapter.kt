@@ -16,9 +16,9 @@ import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.recyclerview.widget.RecyclerView
 import money.nala.pay.interview.R
-import money.nala.pay.interview.model.Transaction
-import money.nala.pay.interview.model.TransactionType
-import money.nala.pay.interview.model.WalletService
+import money.nala.pay.interview.data.model.Transaction
+import money.nala.pay.interview.data.model.TransactionType
+import money.nala.pay.interview.data.model.WalletService
 import money.nala.pay.interview.ui.helper.TransactionViewMethods
 import money.nala.pay.interview.utils.DimenUtils
 import money.nala.pay.interview.utils.Utils

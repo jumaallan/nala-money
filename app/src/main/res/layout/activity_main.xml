@@ -70,7 +70,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent">
 
-                    <money.nala.pay.interview.ui.views.WrapContentHeightViewPager
+                    <money.nala.pay.interview.views.WrapContentHeightViewPager
                         android:id="@+id/sims_container"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"

@@ -8,10 +8,10 @@ import androidx.annotation.DrawableRes
 import androidx.annotation.IntDef
 import androidx.core.content.ContextCompat
 import money.nala.pay.interview.R
-import money.nala.pay.interview.model.Transaction
-import money.nala.pay.interview.model.TransactionType
-import money.nala.pay.interview.model.TransactionType.Companion.from
-import money.nala.pay.interview.model.WalletServiceCurrency
+import money.nala.pay.interview.data.model.Transaction
+import money.nala.pay.interview.data.model.TransactionType
+import money.nala.pay.interview.data.model.TransactionType.Companion.from
+import money.nala.pay.interview.data.model.WalletServiceCurrency
 import money.nala.pay.interview.utils.formatAmountWithCurrency
 import java.lang.annotation.Retention
 import java.lang.annotation.RetentionPolicy
@@ -24,9 +24,9 @@ object TransactionViewMethods {
 
     @Retention(RetentionPolicy.SOURCE)
     @IntDef(
-        DIRECTION_OUTGOING,
-        DIRECTION_INCOMING,
-        DIRECTION_UNKNOWN
+            DIRECTION_OUTGOING,
+            DIRECTION_INCOMING,
+            DIRECTION_UNKNOWN
     )
     annotation class TransactionDirectionInt
 
@@ -42,34 +42,34 @@ object TransactionViewMethods {
     }
 
     fun getStandardizedAmountWithCurrency(
-        trans: Transaction,
-        c: Context?
+            trans: Transaction,
+            c: Context?
     ): CharSequence {
         return getStandardizedAmountWithCurrency(trans, c, true)
     }
 
-    fun getStandardizedAmountWithCurrency(trans: Transaction, c: Context?, showSign: Boolean): CharSequence {
+    private fun getStandardizedAmountWithCurrency(trans: Transaction, c: Context?, showSign: Boolean): CharSequence {
         return if (c == null) SpannedString("") else getCustomAmountWithCurrency(
-            c,
-            trans.amount,
-            if (showSign && getDirection(
-                    trans,
-                    c
-                ) == DIRECTION_INCOMING
-            ) "+" else "",
-            WalletServiceCurrency.TZS.getNameAsString(c)
+                c,
+                trans.amount,
+                if (showSign && getDirection(
+                                trans,
+                                c
+                        ) == DIRECTION_INCOMING
+                ) "+" else "",
+                WalletServiceCurrency.TZS.getNameAsString(c)
         )
     }
 
-    fun getCustomAmountWithCurrency(c: Context?, amount: String, sign: String, currency: String): CharSequence {
+    private fun getCustomAmountWithCurrency(c: Context?, amount: String, sign: String, currency: String): CharSequence {
         return if (c == null) SpannedString("") else try {
             Html.fromHtml(
-                amount.formatAmountWithCurrency(
-                    c,
-                    R.string.txt_amount,
-                    sign,
-                    currency.toUpperCase()
-                )
+                    amount.formatAmountWithCurrency(
+                            c,
+                            R.string.txt_amount,
+                            sign,
+                            currency.toUpperCase()
+                    )
             )
         } catch (e: Exception) {
             SpannedString("")

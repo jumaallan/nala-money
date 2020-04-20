@@ -1,4 +1,4 @@
-package money.nala.pay.interview.ui.views
+package money.nala.pay.interview.views
 
 import android.content.Context
 import android.util.AttributeSet
