@@ -1,4 +1,4 @@
-package money.nala.pay.interview.ui
+package money.nala.pay.interview.ui.adapter
 
 import android.annotation.SuppressLint
 import android.graphics.Outline

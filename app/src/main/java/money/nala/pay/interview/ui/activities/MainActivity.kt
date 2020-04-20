@@ -1,4 +1,4 @@
-package money.nala.pay.interview.ui
+package money.nala.pay.interview.ui.activities
 
 import android.os.Bundle
 import android.util.Log
@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
 import money.nala.pay.interview.R
+import money.nala.pay.interview.ui.adapter.TransactionAdapter
 import money.nala.pay.interview.ui.viewmodels.TransactionViewModel
 
 class MainActivity : AppCompatActivity() {
