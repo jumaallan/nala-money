@@ -1,14 +1,20 @@
 package money.nala.pay.interview.data.repository
 
+import androidx.lifecycle.LiveData
 import money.nala.pay.interview.data.model.Transaction
 import money.nala.pay.interview.data.model.TransactionType
+import money.nala.pay.interview.data.settings.Settings
+import money.nala.pay.interview.data.settings.SettingsConstants
+import money.nala.pay.interview.utils.BalanceSharedPreferenceLiveData
 import money.nala.pay.interview.utils.Utils
 import money.nala.pay.interview.utils.deserializeJsonToList
 import timber.log.Timber
 
-class TransactionRepository {
+class TransactionRepository(
+        private val settings: Settings
+) {
 
-    fun getAllTransactions(): List<Transaction> {
+    fun getAllTransactions(): LiveData<List<Transaction>> {
         val transactionsJson = Utils.readFromAssetFile(fileName = TRANSACTIONS_FILE)
         Timber.d("transactionsJson: $transactionsJson")
         val transactions: MutableList<Transaction> = transactionsJson.deserializeJsonToList()
@@ -51,6 +57,14 @@ class TransactionRepository {
                 "",
                 "",
                 timestamp
+        )
+    }
+
+    fun getShouldShowBalance(): BalanceSharedPreferenceLiveData {
+        return BalanceSharedPreferenceLiveData(
+                sharedPreferences = settings.settings,
+                key = SettingsConstants.SHOULD_SHOW_BALANCE,
+                defValue = settings.shouldShowBalance()
         )
     }
 
