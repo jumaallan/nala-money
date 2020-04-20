@@ -3,12 +3,12 @@ package money.nala.pay.interview.ui.adapter
 import android.annotation.SuppressLint
 import android.graphics.Outline
 import android.os.Build
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.ViewOutlineProvider
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.annotation.CallSuper
 import androidx.annotation.DrawableRes
@@ -22,6 +22,7 @@ import money.nala.pay.interview.data.model.WalletService
 import money.nala.pay.interview.ui.helper.TransactionViewMethods
 import money.nala.pay.interview.utils.DimenUtils
 import money.nala.pay.interview.utils.Utils
+import timber.log.Timber
 import java.util.*
 
 /**
@@ -47,6 +48,9 @@ class TransactionAdapter(
     }
 
     override fun getItemViewType(position: Int): Int {
+        if (position == 0) {
+            TYPE_HEADER
+        }
         val transaction = transactions.getOrNull(position - 1)
         return when {
             transaction?.transactionType != TransactionType.UNKNOWN -> {
@@ -62,6 +66,9 @@ class TransactionAdapter(
         return when (viewType) {
             TYPE_DATE -> {
                 DateViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.li_transaction_date_header, parent, false))
+            }
+            TYPE_HEADER -> {
+                HeaderViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.li_transaction_header, parent, false))
             }
             else -> {
                 val view = LayoutInflater.from(parent.context).inflate(R.layout.li_transaction, parent, false)
@@ -160,6 +167,15 @@ class TransactionAdapter(
         }
     }
 
+    private class HeaderViewHolder internal constructor(v: View) : ViewHolder(v) {
+        var hideBalance_button: LinearLayout = view.findViewById(R.id.hideBalance_button)
+        override fun bind(current: Transaction?, previous: Transaction?, next: Transaction?, show: Boolean) {
+            super.bind(current, previous, next, show)
+            hideBalance_button.setOnClickListener {
+            }
+        }
+    }
+
     private class TransactionViewHolder internal constructor(v: View) : ViewHolder(v) {
         var who: TextView? = view.findViewById(R.id.who)
         var type: TextView? = view.findViewById(R.id.type)
@@ -172,7 +188,7 @@ class TransactionAdapter(
             bindBackground(view)
             bindOutlineProvider(view)
 
-            Log.d("TransactionViewHolder", "current: $current, previous: $previous, next: $next")
+            Timber.d("current: $current, previous: $previous, next: $next")
 
             transaction?.let {
                 if (showBalance && it.amount.isNotEmpty()) {
@@ -261,5 +277,6 @@ class TransactionAdapter(
     companion object {
         private const val TYPE_TRANS = 0
         private const val TYPE_DATE = 1
+        private const val TYPE_HEADER = 2
     }
 }
