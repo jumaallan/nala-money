@@ -1,16 +1,16 @@
 package money.nala.pay.interview.data.repository
 
-import android.util.Log
 import money.nala.pay.interview.data.model.Transaction
 import money.nala.pay.interview.data.model.TransactionType
 import money.nala.pay.interview.utils.Utils
 import money.nala.pay.interview.utils.deserializeJsonToList
+import timber.log.Timber
 
 class TransactionRepository {
 
     fun getAllTransactions(): List<Transaction> {
         val transactionsJson = Utils.readFromAssetFile(fileName = TRANSACTIONS_FILE)
-        Log.d("TransactionViewModel", "transactionsJson: $transactionsJson")
+        Timber.d("transactionsJson: $transactionsJson")
         val transactions: MutableList<Transaction> = transactionsJson.deserializeJsonToList()
         insertDateHeaders(transactions)
         return transactions

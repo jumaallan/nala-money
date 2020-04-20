@@ -13,8 +13,6 @@ import money.nala.pay.interview.data.model.TransactionType
 import money.nala.pay.interview.data.model.TransactionType.Companion.from
 import money.nala.pay.interview.data.model.WalletServiceCurrency
 import money.nala.pay.interview.utils.formatAmountWithCurrency
-import java.lang.annotation.Retention
-import java.lang.annotation.RetentionPolicy
 
 object TransactionViewMethods {
 
@@ -22,7 +20,7 @@ object TransactionViewMethods {
     const val DIRECTION_INCOMING = 1
     const val DIRECTION_UNKNOWN = 2
 
-    @Retention(RetentionPolicy.SOURCE)
+    @kotlin.annotation.Retention(AnnotationRetention.SOURCE)
     @IntDef(
             DIRECTION_OUTGOING,
             DIRECTION_INCOMING,

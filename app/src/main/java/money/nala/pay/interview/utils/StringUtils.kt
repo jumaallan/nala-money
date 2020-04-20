@@ -7,7 +7,7 @@ import android.util.Log
 import androidx.annotation.StringRes
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import money.nala.pay.interview.app.NalaApp
+import money.nala.pay.interview.NalaApp
 import java.text.NumberFormat
 import java.util.*
 
@@ -89,7 +89,7 @@ fun String.deserializeJavaMapToMap(): Map<String, String> {
     }
 }
 
-fun <reified T, reified K> String.deserializeJsonToMap(): MutableMap<T, K> {
+inline fun <reified T, reified K> String.deserializeJsonToMap(): MutableMap<T, K> {
     return try {
         Gson().fromJson(this, TypeToken.getParameterized(MutableMap::class.java, T::class.java, K::class.java).type)
     } catch (e: Exception) {
@@ -98,7 +98,7 @@ fun <reified T, reified K> String.deserializeJsonToMap(): MutableMap<T, K> {
     }
 }
 
-fun <reified T> String.deserializeJsonToList(): MutableList<T> {
+inline fun <reified T> String.deserializeJsonToList(): MutableList<T> {
     return try {
         Gson().fromJson(this, TypeToken.getParameterized(MutableList::class.java, T::class.java).type)
     } catch (e: Exception) {
