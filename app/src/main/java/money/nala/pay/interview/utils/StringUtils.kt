@@ -62,10 +62,10 @@ fun String.formatAmountWithCurrency(context: Context = NalaApp.appContext,
     } else {
         try {
             context.getString(
-                stringResId,
-                sign,
-                currency,
-                formattedAmount
+                    stringResId,
+                    sign,
+                    currency,
+                    formattedAmount
             )
         } catch (e: Exception) {
             formattedAmount

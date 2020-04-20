@@ -25,7 +25,7 @@ object Utils {
     /**
      * @throws IOException, JSONException
      */
-    fun readFromInputStream(inputStream: InputStream): String {
+    private fun readFromInputStream(inputStream: InputStream): String {
         val size = inputStream.available()
         val buffer = ByteArray(size)
         inputStream.read(buffer)
