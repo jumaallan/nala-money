@@ -3,7 +3,7 @@ package money.nala.pay.interview.model
 import android.content.Context
 import androidx.appcompat.content.res.AppCompatResources
 import money.nala.pay.interview.R
-import money.nala.pay.interview.app.NalaApp
+import money.nala.pay.interview.NalaApp
 
 enum class WalletServiceCurrency(val localNameStringResource: Int,
                                  val localNameImageResource: Int,

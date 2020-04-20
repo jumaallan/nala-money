@@ -1,4 +1,4 @@
-package money.nala.pay.interview.app
+package money.nala.pay.interview
 
 import android.app.Application
 import android.content.Context

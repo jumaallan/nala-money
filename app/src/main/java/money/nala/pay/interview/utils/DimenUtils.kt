@@ -1,7 +1,7 @@
 package money.nala.pay.interview.utils
 
 import android.util.DisplayMetrics
-import money.nala.pay.interview.app.NalaApp
+import money.nala.pay.interview.NalaApp
 
 /**
  * Created by Mahmoud Abdurrahman (ma.abdurrahman@gmail.com) on 2/4/20.

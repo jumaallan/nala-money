@@ -1,7 +1,7 @@
 package money.nala.pay.interview.utils
 
 import android.content.Context
-import money.nala.pay.interview.app.NalaApp
+import money.nala.pay.interview.NalaApp
 import java.io.InputStream
 import java.nio.charset.Charset
 import java.text.SimpleDateFormat

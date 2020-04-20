@@ -2,7 +2,7 @@
     package="money.nala.pay.interview">
 
     <application
-        android:name=".app.NalaApp"
+        android:name=".NalaApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
