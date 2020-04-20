@@ -6,6 +6,7 @@
     <application
         android:name=".DebugNalaApp"
         android:allowBackup="true"
+        android:supportsRtl="true"
         tools:replace="android:name" />
 
 </manifest>
