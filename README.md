@@ -1,1 +1,1 @@
-## \[ 🚧 Work in progress 👷‍♀️⛏👷🔧️🚧 \] NALA Money  
+## \[ 🚧 Work in progress 👷‍♀️⛏👷🔧️🚧 \] NALA Money
