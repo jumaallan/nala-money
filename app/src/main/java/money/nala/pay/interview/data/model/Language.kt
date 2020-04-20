@@ -1,4 +1,4 @@
-package money.nala.pay.interview.model
+package money.nala.pay.interview.data.model
 
 import money.nala.pay.interview.R
 import java.util.*
