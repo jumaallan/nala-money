@@ -23,7 +23,7 @@ private val loadFeature by lazy {
 }
 
 val repositoriesModule = module {
-    single { TransactionRepository() }
+    single { TransactionRepository(get()) }
 }
 
 val viewModelsModule = module {

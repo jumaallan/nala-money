@@ -15,7 +15,6 @@ class TransactionViewModel(
     }
 
     fun getShouldShowBalance(): BalanceSharedPreferenceLiveData {
-        return getShouldShowBalance()
+        return transactionRepository.getShouldShowBalance()
     }
-
 }
