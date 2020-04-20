@@ -1,8 +1,8 @@
 package money.nala.pay.interview.di
 
 import android.content.Context
-import money.nala.pay.interview.data.repository.TransactionRepository
 import money.nala.pay.interview.data.settings.Settings
+import money.nala.pay.interview.repository.TransactionRepository
 import money.nala.pay.interview.ui.viewmodels.TransactionViewModel
 import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel

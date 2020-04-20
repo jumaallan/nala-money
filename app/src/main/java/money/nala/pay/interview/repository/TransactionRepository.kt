@@ -1,4 +1,4 @@
-package money.nala.pay.interview.data.repository
+package money.nala.pay.interview.repository
 
 import androidx.lifecycle.MutableLiveData
 import money.nala.pay.interview.data.model.Transaction

@@ -3,7 +3,7 @@ package money.nala.pay.interview.ui.viewmodels
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import money.nala.pay.interview.data.model.Transaction
-import money.nala.pay.interview.data.repository.TransactionRepository
+import money.nala.pay.interview.repository.TransactionRepository
 import money.nala.pay.interview.utils.BalanceSharedPreferenceLiveData
 
 class TransactionViewModel(
