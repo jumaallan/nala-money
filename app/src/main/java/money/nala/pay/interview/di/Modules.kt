@@ -2,6 +2,7 @@ package money.nala.pay.interview.di
 
 import android.content.Context
 import money.nala.pay.interview.data.settings.Settings
+import money.nala.pay.interview.executers.AppExecutors
 import money.nala.pay.interview.repository.TransactionRepository
 import money.nala.pay.interview.ui.viewmodels.TransactionViewModel
 import org.koin.android.ext.koin.androidContext
@@ -17,7 +18,8 @@ private val loadFeature by lazy {
             listOf(
                     repositoriesModule,
                     viewModelsModule,
-                    settingsModule
+                    settingsModule,
+                    executorsModule
             )
     )
 }
@@ -27,7 +29,7 @@ val repositoriesModule = module {
 }
 
 val viewModelsModule = module {
-    viewModel { TransactionViewModel(get()) }
+    viewModel { TransactionViewModel(get(), get()) }
 }
 
 val settingsModule = module {
@@ -40,4 +42,8 @@ val settingsModule = module {
     single {
         Settings(get())
     }
+}
+
+val executorsModule = module {
+    single { AppExecutors.getInstance() }
 }

@@ -46,6 +46,7 @@ class TransactionAdapter(
 
     override fun getItemViewType(position: Int): Int {
         if (position == 0) {
+            Timber.d("heeeeey")
             TYPE_HEADER
         }
         val transaction = transactions.getOrNull(position - 1)
@@ -165,10 +166,12 @@ class TransactionAdapter(
     }
 
     private class HeaderViewHolder internal constructor(v: View) : ViewHolder(v) {
-        var hideBalance_button: LinearLayout = view.findViewById(R.id.hideBalance_button)
+        var hideBalanceButton: LinearLayout = view.findViewById(R.id.hideBalance_button)
         override fun bind(current: Transaction?, previous: Transaction?, next: Transaction?, show: Boolean) {
             super.bind(current, previous, next, show)
-            hideBalance_button.setOnClickListener {
+
+            Timber.d("Juuuumaaaaa ")
+            hideBalanceButton.setOnClickListener {
             }
         }
     }
