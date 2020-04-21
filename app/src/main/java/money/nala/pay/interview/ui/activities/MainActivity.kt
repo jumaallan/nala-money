@@ -23,18 +23,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-//        transactionListAdapter = TransactionAdapter {
-//            // lets try and change the value of the shared pref here
-//            // not sure if we should check for the previous state here,
-//            // but let me try and see - if true, we flip to false,
-//            // then update the shared prefs too
-//            var showBalance = true
-//            if (settings.shouldShowBalance()) {
-//                showBalance = false
-//            }
-//            settings.setShouldShowBalance(showBalance)
-//        }
-
         settings.setShouldShowBalance(true)
 
         transactionListAdapter = TransactionAdapter(mutableListOf(), settings.shouldShowBalance())

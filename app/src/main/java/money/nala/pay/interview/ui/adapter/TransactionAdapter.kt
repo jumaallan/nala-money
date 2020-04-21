@@ -25,9 +25,6 @@ import money.nala.pay.interview.utils.Utils
 import timber.log.Timber
 import java.util.*
 
-/**
- * Created by Mahmoud Abdurrahman (ma.abdurrahman@gmail.com) on 13/4/20.
- */
 class TransactionAdapter(
         private val transactions: MutableList<Transaction>,
         private var showBalance: Boolean

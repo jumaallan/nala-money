@@ -12,10 +12,6 @@ import java.text.NumberFormat
 import java.util.*
 
 /**
- * Created by Mahmoud Abdurrahman (ma.abdurrahman@gmail.com) on 1/30/20.
- */
-
-/**
  * Safely convert the string to the double.
  */
 fun String.toSafeDouble(): Double? =
