@@ -18,12 +18,15 @@ import java.util.*
 /**
  * Safely convert the string to the double.
  */
-fun String.toSafeDouble(description: String): Double? =
+fun String.toSafeDouble(): Double? =
         try {
             if (isEmpty()) {
                 null
             } else {
-                dropWhile { !it.isDigit() && it != '-' }.dropLastWhile { !it.isDigit() }.replace("[,\\s]".toRegex(), "").toDouble()
+                dropWhile { !it.isDigit() && it != '-' }
+                        .dropLastWhile { !it.isDigit() }
+                        .replace("[,\\s]".toRegex(), "")
+                        .toDouble()
             }
         } catch (e: NumberFormatException) {
             null
@@ -31,9 +34,7 @@ fun String.toSafeDouble(description: String): Double? =
             null
         }
 
-fun String.toSafeDouble(): Double? = toSafeDouble(this)
-
-fun String.formatAmount(): String {
+fun String.formatAmount(): String? {
     return try {
         val amountDouble = toSafeDouble()
         if (amountDouble != null) {
@@ -43,19 +44,21 @@ fun String.formatAmount(): String {
             numberFormat.maximumFractionDigits = 2
             numberFormat.format(amountDouble)
         } else {
-            this
+            null
         }
     } catch (e: java.lang.Exception) {
-        this
+        null
     }
 }
 
 @JvmOverloads
-fun String.formatAmountWithCurrency(context: Context = NalaApp.appContext,
-                                    @StringRes
-                                    stringResId: Int = -1,
-                                    sign: String = "",
-                                    currency: String = ""): String {
+fun String.formatAmountWithCurrency(
+        context: Context = NalaApp.appContext,
+        @StringRes
+        stringResId: Int = -1,
+        sign: String = "",
+        currency: String = ""
+): String? {
     val formattedAmount = formatAmount()
     return if (stringResId == -1) {
         formattedAmount
@@ -91,7 +94,10 @@ fun String.deserializeJavaMapToMap(): Map<String, String> {
 
 inline fun <reified T, reified K> String.deserializeJsonToMap(): MutableMap<T, K> {
     return try {
-        Gson().fromJson(this, TypeToken.getParameterized(MutableMap::class.java, T::class.java, K::class.java).type)
+        Gson().fromJson(
+                this,
+                TypeToken.getParameterized(MutableMap::class.java, T::class.java, K::class.java).type
+        )
     } catch (e: Exception) {
         Log.e("StringUtils", e.message, e)
         mutableMapOf()
@@ -100,7 +106,10 @@ inline fun <reified T, reified K> String.deserializeJsonToMap(): MutableMap<T, K
 
 inline fun <reified T> String.deserializeJsonToList(): MutableList<T> {
     return try {
-        Gson().fromJson(this, TypeToken.getParameterized(MutableList::class.java, T::class.java).type)
+        Gson().fromJson(
+                this,
+                TypeToken.getParameterized(MutableList::class.java, T::class.java).type
+        )
     } catch (e: Exception) {
         Log.e("StringUtils", e.message, e)
         mutableListOf()
