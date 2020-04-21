@@ -24,4 +24,12 @@
     <string name="txt_amount" translatable="false"><![CDATA[<small>%1$s%2$s </small>%3$s]]></string>
     <string name="txt_error">Error</string>
 
+    <!--    the transactions page-->
+    <string name="transaction_uuid">Transaction UUID</string>
+    <string name="transaction_type">Transaction Type</string>
+    <string name="transaction_amount">Transaction Amount</string>
+    <string name="recipient">Recepient</string>
+    <string name="recipient_number">Recepient Number</string>
+    <string name="description">Description</string>
+
 </resources>

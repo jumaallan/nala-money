@@ -17,4 +17,13 @@
 
     <!-- General Texts -->
     <string name="txt_error">swahili translation</string>
+
+    <!--    the transactions page-->
+    <string name="transaction_uuid">Transaction UUID</string>
+    <string name="transaction_type">Transaction Type</string>
+    <string name="transaction_amount">Transaction Amount</string>
+    <string name="recipient">Recepient</string>
+    <string name="recipient_number">Recepient Number</string>
+    <string name="description">Description</string>
+
 </resources>
