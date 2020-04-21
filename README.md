@@ -32,7 +32,7 @@ This project takes advantage of many popular libraries and tools of the Android 
          * [LiveData](https://developer.android.com/topic/libraries/architecture/livedata) - notify views about database change
          * [Lifecycle](https://developer.android.com/topic/libraries/architecture/lifecycle) - perform action when lifecycle state changes
          * [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel) - store and manage UI-related data in a lifecycle conscious way
-     * [Stetho](http://facebook.github.io/stetho/) - application debugging tool
+     * [Stetho](http://facebook.github.io/stetho/) - application debugging tool - available on debug build only!!!
  
  * Architecture
      * MVVM - application level
