@@ -9,7 +9,7 @@ A simple android app that shows your transactions. In this solution, the followi
 - [x] How to support RTL support for Arabic
 - [X] Enrich unit tests for toSafeDouble() in StringUtilsTests and add a couple of test cases for formatAmountCommas()
 
-Project characteristics
+ ## Project characteristics
 
 This project brings to table set of best practices, tools, and solutions:
 
