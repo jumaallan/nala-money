@@ -2,9 +2,13 @@
 
 package money.nala.pay.interview.utils
 
+import android.app.Activity
 import android.content.Context
 import android.util.Log
+import android.view.View
+import android.widget.Toast
 import androidx.annotation.StringRes
+import com.google.android.material.snackbar.Snackbar
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import money.nala.pay.interview.NalaApp
@@ -110,4 +114,16 @@ inline fun <reified T> String.deserializeJsonToList(): MutableList<T> {
         Log.e("StringUtils", e.message, e)
         mutableListOf()
     }
+}
+
+fun Activity.toast(message: String, duration: Int = Toast.LENGTH_SHORT) {
+    Toast.makeText(this, message, duration).show()
+}
+
+fun View.makeSnackbar(message: String) {
+    Snackbar.make(this, message, Snackbar.LENGTH_SHORT).show()
+}
+
+fun Activity.makeSnackbar(message: String) {
+    findViewById<View>(android.R.id.content).makeSnackbar(message)
 }

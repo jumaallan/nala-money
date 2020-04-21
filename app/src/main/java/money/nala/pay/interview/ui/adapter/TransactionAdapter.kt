@@ -25,10 +25,16 @@ import money.nala.pay.interview.utils.Utils
 import timber.log.Timber
 import java.util.*
 
+@Suppress("DEPRECATION")
 class TransactionAdapter(
         private val transactions: MutableList<Transaction>,
-        private var showBalance: Boolean
+        private var showBalance: Boolean,
+        private val listener: OnItemClickListener
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+
+    interface OnItemClickListener {
+        fun onItemClick(item: Transaction?, position: Int)
+    }
 
     private var recyclerView: RecyclerView? = null
 
@@ -46,8 +52,7 @@ class TransactionAdapter(
 
     override fun getItemViewType(position: Int): Int {
         if (position == 0) {
-            Timber.d("heeeeey")
-            TYPE_HEADER
+            return TYPE_HEADER
         }
         val transaction = transactions.getOrNull(position - 1)
         return when {
@@ -87,7 +92,7 @@ class TransactionAdapter(
                 val next = transactions.getOrNull(position)?.let {
                     if (it.type != TransactionType.UNKNOWN.toString()) it else null
                 }
-                holder.bind(current, previous, next, showBalance)
+                holder.bind(current, previous, next, showBalance, listener)
             }
         }
     }
@@ -134,21 +139,23 @@ class TransactionAdapter(
         var previousTransaction: Transaction? = null
         var nextTransaction: Transaction? = null
         var showBalance: Boolean = true
+        var onItemClickListener: OnItemClickListener? = null
 
         @CallSuper
-        open fun bind(current: Transaction? = null, previous: Transaction? = null, next: Transaction? = null, show: Boolean) {
+        open fun bind(current: Transaction? = null, previous: Transaction? = null, next: Transaction? = null, show: Boolean, listener: OnItemClickListener) {
             transaction = current
             previousTransaction = previous
             nextTransaction = next
             showBalance = show
+            onItemClickListener = listener
         }
     }
 
     private class DateViewHolder internal constructor(v: View) : ViewHolder(v) {
         var currentDate: Calendar? = Calendar.getInstance()
         var date: TextView? = view.findViewById(R.id.date)
-        override fun bind(current: Transaction?, previous: Transaction?, next: Transaction?, show: Boolean) {
-            super.bind(current, previous, next, show)
+        override fun bind(current: Transaction?, previous: Transaction?, next: Transaction?, show: Boolean, listener: OnItemClickListener) {
+            super.bind(current, previous, next, show, listener)
 
             if (transaction == null) return
 
@@ -167,11 +174,11 @@ class TransactionAdapter(
 
     private class HeaderViewHolder internal constructor(v: View) : ViewHolder(v) {
         var hideBalanceButton: LinearLayout = view.findViewById(R.id.hideBalance_button)
-        override fun bind(current: Transaction?, previous: Transaction?, next: Transaction?, show: Boolean) {
-            super.bind(current, previous, next, show)
+        override fun bind(current: Transaction?, previous: Transaction?, next: Transaction?, show: Boolean, listener: OnItemClickListener) {
+            super.bind(current, previous, next, show, listener)
 
-            Timber.d("Juuuumaaaaa ")
             hideBalanceButton.setOnClickListener {
+                listener.onItemClick(current, position)
             }
         }
     }
@@ -183,8 +190,8 @@ class TransactionAdapter(
         var sim: ImageView? = view.findViewById(R.id.transaction_sim)
         var pic: ImageView? = view.findViewById(R.id.pic)
 
-        override fun bind(current: Transaction?, previous: Transaction?, next: Transaction?, show: Boolean) {
-            super.bind(current, previous, next, show)
+        override fun bind(current: Transaction?, previous: Transaction?, next: Transaction?, show: Boolean, listener: OnItemClickListener) {
+            super.bind(current, previous, next, show, listener)
             bindBackground(view)
             bindOutlineProvider(view)
 
@@ -213,12 +220,17 @@ class TransactionAdapter(
                 try {
                     pic?.setImageResource(resource)
                 } catch (e: Exception) {
+                    Timber.e(e)
                 }
 
                 it
             } ?: run {
                 amount?.text = ""
                 sim?.visibility = View.INVISIBLE
+            }
+
+            view.setOnClickListener {
+                listener.onItemClick(current, position)
             }
         }
 

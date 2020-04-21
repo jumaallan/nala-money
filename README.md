@@ -14,7 +14,7 @@ A simple android app that shows your transactions. In this solution, the followi
 This project brings to table set of best practices, tools, and solutions:
 
 * 100% Kotlin
-* Model-View-ViewModel Architecture
+* Model-View-View Model Architecture
 * Android Jetpack
 * Testing
 * Dependency Injection
